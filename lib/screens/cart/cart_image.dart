@@ -12,7 +12,8 @@ class CartImage extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: AssetImage("images/bathua_paratha.png"),
+          //image: AssetImage("images/bathua_paratha.png"),
+          image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
           fit: BoxFit.cover, //change image fill type
         ),
       ),

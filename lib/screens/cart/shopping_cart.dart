@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import '../../model/globals.dart';
 import 'cart_image.dart';
 import 'transform.dart';
 import 'cart_list_view.dart';
@@ -13,12 +14,6 @@ class CartCardScreen extends StatefulWidget {
 }
 
 class _cartState extends State<CartCardScreen> {
-  final List<int> entries = <int>[
-    230,
-    250,
-    300,
-    420
-  ]; // this data should be returned from api
 
   totalItemsPrice() {
     for (var i = 0; i < entries.length; i++) {

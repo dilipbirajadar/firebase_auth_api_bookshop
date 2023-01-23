@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:book_recycler/model/globals.dart' as globals;
 
+import '../../model/address.dart';
+
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
 
@@ -263,6 +265,15 @@ class paynowlistview extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if ((globals.creditcardname.text == "")) {
+                        Navigator.pushNamed(context, '/paymentconfirmation',
+                            arguments: Address(
+                            addressname: globals.addressname.text,
+                            phoneNumber: globals.phoneNumber.text,
+                            email: globals.email.text,
+                             addresstitle: globals.addresstitle.text,
+                             address: globals.address.text,
+                             city: globals.city.text,
+                            state: globals.state.text));
                         //print(globals.creditcardname.text);
                         //return null;
                         showDialog(
@@ -288,7 +299,7 @@ class paynowlistview extends StatelessWidget {
                       } else {
                         Navigator.pushNamed(
                           context,
-                          '/cart',
+                          '/paymentconfirmation',
                         );
                       }
                     },

@@ -1,4 +1,5 @@
 import 'package:book_recycler/provide/auth.dart';
+import 'package:book_recycler/screens/checkout/payment_confirmation_screen.dart';
 import 'package:book_recycler/screens/exchange_book_screen.dart';
 import 'package:book_recycler/screens/profile_screen.dart';
 import 'package:book_recycler/screens/sell_book_screen.dart';
@@ -30,6 +31,7 @@ void main() {
       '/checkout': (context) => const CheckoutScreen(),
       '/addaddress': (context) => const AddAddressScreen(),
       '/checkoutwithaddress': (context) => CheckoutWithAddress(),
+      '/paymentconfirmation': (context) => PaymentConfirmationScreen(),
     },
   ));
 

@@ -14,7 +14,7 @@ class BooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 80,
       width: 400,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
