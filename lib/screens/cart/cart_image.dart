@@ -7,14 +7,14 @@ class CartImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       //margin: EdgeInsets.all(5),
-      height: 50.0,
+      height: 45.0,
       width: 60.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
           //image: AssetImage("images/bathua_paratha.png"),
           image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
-          fit: BoxFit.cover, //change image fill type
+          fit: BoxFit.fill, //change image fill type
         ),
       ),
     );

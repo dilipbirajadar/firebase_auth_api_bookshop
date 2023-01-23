@@ -20,3 +20,5 @@ final TextEditingController securitycode = TextEditingController();
 final List<int> entries = <int>[230, 250, 300, 420];
 
 double totalPriceSum = 0;
+
+ String authIdTokenFB = '';

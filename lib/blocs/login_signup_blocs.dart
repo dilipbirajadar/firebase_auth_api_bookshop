@@ -3,6 +3,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../model/login_signup_response.dart';
 import '../resources/repository.dart';
+import '../model/globals.dart' as globals;
 
 class _LoginSignupBloc{
   //Access to Repository
@@ -21,6 +22,9 @@ class _LoginSignupBloc{
     print("email ${loginResponse.email}");
     print("id Token ${loginResponse.idToken}");
 
+    globals.authIdTokenFB = loginResponse.idToken;
+    print('token ${globals.authIdTokenFB}');
+
     _loginFetcher.sink.add(loginResponse);//Add data to the PublishSubject object _movieFetcher
   }
 
@@ -29,6 +33,9 @@ class _LoginSignupBloc{
 
     print("email ${loginResponse.email}");
     print("id Token ${loginResponse.idToken}");
+
+    globals.authIdTokenFB = loginResponse.idToken;
+    print('token ${globals.authIdTokenFB}');
 
     _loginFetcher.sink.add(loginResponse);//Add data to the PublishSubject object _movieFetcher
   }

@@ -1,4 +1,4 @@
-class BooksModel{
+class BooksModelResponseData{
   /**
    *  "img": "gs://book-recycler-1864f.appspot.com/onehundredyearsofsolitude.png",
 
@@ -26,6 +26,58 @@ class BooksModel{
 
       "most popular" : true
    */
+
+  String name = "";
+  String description = "";
+  String imageName = "";
+  double ratings = 0.0;
+  String author = "";
+  int price = 0;
+  String isbn = "";
+  String binding = "";
+  String language = "";
+  String condition = "";
+  String category = "";
+  bool mostPopular = false;
+
+
+
+  //Named constructor
+  BooksModelResponseData.name(this.name, this.description, this.imageName,this.ratings,this.author,
+      this.price,this.isbn,this.binding,this.language,this.condition,this.category,this.mostPopular);
+
+  BooksModelResponseData.fromJson(Map<String, dynamic> json)
+      :     name = json['name'],
+        description = json['description'],
+        imageName = json['img'],
+        ratings = json['ratings'],
+        author = json['author'],
+        price = json['price'],
+        isbn = json['ISBN'],
+        binding = json['binding'],
+        language = json['language'],
+        condition = json['condition'],
+        category = json['category'],
+        mostPopular = json['most popular'];
+
+  // convert RecipeData to json
+  Map<String, dynamic> toJson() {
+    return {
+      'description': description,
+      'img': imageName,
+      'name': name,
+      'ratings':ratings,
+      'author':author,
+      'price': price,
+      'ISBN': isbn,
+      'binding':binding,
+      'language':language,
+      'condition':condition,
+      'category':category,
+      'mostPopular':mostPopular,
+
+    };
+  }
 
 
 }

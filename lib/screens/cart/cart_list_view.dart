@@ -33,7 +33,7 @@ class BooksListView extends StatelessWidget {
         ),
         trailing: Column(
           children: [
-            SizedBox(height: 10),
+
             Text('#$price',
                 style:
                     TextStyle(color: Colors.green)), //price returned from api

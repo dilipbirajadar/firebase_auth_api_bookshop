@@ -6,4 +6,6 @@ class Repository{
   loginAPI(LoginSignUpModel loginSignUpModel)=> ApiHelper().postLoginApi(loginSignUpModel);
 
   signupAPI(LoginSignUpModel loginSignUpModel)=> ApiHelper().postSignupApi(loginSignUpModel);
+
+  getBookAPI() => ApiHelper().getBooks();
 }
