@@ -28,9 +28,16 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: mostPopularModel.length,
-      itemBuilder: (BuildContext context, int index) => SizedBox(
+      itemBuilder: (BuildContext context, int index) => Container(
           width: deviceWidth(context) * 0.35,
           height: deviceHeight(context) * 0.25,
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
+        padding: EdgeInsets.all(1),
           //child: CardWidget(),
           child: CardWidget(index),
     ),

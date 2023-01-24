@@ -54,7 +54,7 @@ class _SellBookScreenState extends State<SellBookScreen> {
                 ),
                 Container(
                     margin: EdgeInsets.only(top: deviceHeight(context)*0.01,left: 5,right: 5),
-                    height: deviceHeight(context)*0.25,
+                    height: deviceHeight(context)*0.26,
                     width: deviceWidth(context),
                     child: HorizontalWidget()
                 ),

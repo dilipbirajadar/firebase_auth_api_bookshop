@@ -118,11 +118,7 @@ class creditcardwidget extends StatefulWidget {
 }
 
 class _creditcardwidgetState extends State<creditcardwidget> {
-  final creditcardname = TextEditingController();
-  final creditcardnumber = TextEditingController();
-  final month = TextEditingController();
-  final year = TextEditingController();
-  final securitycode = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -163,9 +159,9 @@ class _creditcardwidgetState extends State<creditcardwidget> {
             ),
           ),
           textfieldwidget(
-              "Card Holder's Name", 40, 400, 10, 5, 10, 10, creditcardname),
+              "Card Holder's Name", 40, 400, 10, 5, 10, 10, globals.creditcardname),
           textfieldwidget(
-              "Card Number", 40, 400, 10, 5, 10, 10, creditcardnumber),
+              "Card Number", 40, 400, 10, 5, 10, 10, globals.creditcardnumber),
           Container(
             margin: EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
             child: Align(
@@ -181,12 +177,12 @@ class _creditcardwidgetState extends State<creditcardwidget> {
           ),
           Container(
             child: Row(children: [
-              textfieldwidget("Month", 40, 150, 10, 5, 10, 5, month),
-              textfieldwidget("Year", 40, 150, 10, 5, 10, 5, year),
+              textfieldwidget("Month", 40, 150, 10, 5, 10, 5, globals.month),
+              textfieldwidget("Year", 40, 150, 10, 5, 10, 5, globals.year),
             ]),
           ),
           textfieldwidget(
-              "Security Code", 40, 110, 10, 5, 220, 9, securitycode),
+              "Security Code", 40, 110, 10, 5, 220, 9, globals.securitycode),
         ]));
   }
 }
@@ -265,15 +261,7 @@ class paynowlistview extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if ((globals.creditcardname.text == "")) {
-                        Navigator.pushNamed(context, '/paymentconfirmation',
-                            arguments: Address(
-                            addressname: globals.addressname.text,
-                            phoneNumber: globals.phoneNumber.text,
-                            email: globals.email.text,
-                             addresstitle: globals.addresstitle.text,
-                             address: globals.address.text,
-                             city: globals.city.text,
-                            state: globals.state.text));
+
                         //print(globals.creditcardname.text);
                         //return null;
                         showDialog(
@@ -297,10 +285,15 @@ class paynowlistview extends StatelessWidget {
                           ),
                         );
                       } else {
-                        Navigator.pushNamed(
-                          context,
-                          '/paymentconfirmation',
-                        );
+                        Navigator.pushNamed(context, '/paymentconfirmation',
+                            arguments: Address(
+                                addressname: globals.addressname.text,
+                                phoneNumber: globals.phoneNumber.text,
+                                email: globals.email.text,
+                                addresstitle: globals.addresstitle.text,
+                                address: globals.address.text,
+                                city: globals.city.text,
+                                state: globals.state.text));
                       }
                     },
                     child: Text(

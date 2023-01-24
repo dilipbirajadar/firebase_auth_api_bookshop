@@ -44,11 +44,19 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
           return ListView.builder(
               scrollDirection: Axis.vertical,
               itemCount: snapshot.data?.length,
-              itemBuilder: (BuildContext context, int index) => Center(child:  SizedBox(
-                width: deviceWidth(context) ,
+              itemBuilder: (BuildContext context, int index) => Center(child:  Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                margin: EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
+                padding: EdgeInsets.all(5),
+                width: deviceWidth(context)*1 ,
                 height: deviceHeight(context) * 0.18,
 
                 child:  Row(
+
                   children: [
                     Container(
                       width: deviceWidth(context)*0.2,
@@ -60,7 +68,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                       ),
                     ),
                     Container(
-                      width: deviceWidth(context)*0.8,
+                      width: deviceWidth(context)*0.7,
                       height: deviceHeight(context) * 0.15,
                       child: Column(
                         children: [
@@ -71,7 +79,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           ),
                           Container(
                               height: deviceHeight(context) * 0.03,
-                              width: deviceWidth(context)*0.8,
+                              width: deviceWidth(context)*0.65,
                               padding: EdgeInsets.only(left: 5),
                               child: Align(
                                 alignment: Alignment.bottomLeft,
@@ -85,7 +93,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           ),
                           Container(
                             height: deviceHeight(context) * 0.04,
-                            width: deviceWidth(context)*0.8,
+                            width: deviceWidth(context)*0.65,
                             padding: EdgeInsets.only(left: 5),
                             child: Text(snapshot.data![index].author,
                               style: TextStyle(
@@ -95,12 +103,12 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           ),
                           Container(
                             height: deviceHeight(context) * 0.04,
-                            width: deviceWidth(context)*0.8,
+                            width: deviceWidth(context)*0.7,
                             child: Row(
                               children: [
                                 Container(
                                   height: deviceHeight(context) * 0.04,
-                                  width: deviceWidth(context)*0.6,
+                                  width: deviceWidth(context)*0.5,
                                   padding: EdgeInsets.only(left: 10),
                                   child: Text('₹ ${snapshot.data![index].price}',
                                     style: TextStyle(
@@ -116,7 +124,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.green
                                     ),
-                                    onPressed: () {  },
+                                    onPressed: () { Navigator.pushNamed(context, '/cart'); },
                                     child: Text('Add',
                                       style: TextStyle(
                                         fontSize: 10,
