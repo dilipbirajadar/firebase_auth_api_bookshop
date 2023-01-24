@@ -1,5 +1,6 @@
 import 'package:book_recycler/blocs/get_all_books_blocs.dart';
 import 'package:book_recycler/screens/home_screen.dart';
+import 'package:book_recycler/screens/login_screen.dart';
 import 'package:book_recycler/shared/color.dart';
 import 'package:book_recycler/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -23,12 +24,18 @@ class BuyBooksScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: //AppBar(title: const Text('Buy Books'),backgroundColor: Colors.green),
       AppBar(
-        title:const Text('Buy Books') ,
+        title: Text('Buy Books') ,
         backgroundColor: Colors.green,
-        leading: Builder(
+
+        leading: Icon(Icons.menu),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {onCartClick(context);}),
+        ],
+
+        /*leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(
+              icon:  Icon(
                 Icons.menu,
                 size: 22, // Changing Drawer Icon Size
               ),
@@ -39,6 +46,8 @@ class BuyBooksScreen extends StatelessWidget {
             );
           },
         ),
+        actions: [Icon(Icons.shopping_cart)],*/
+
       ),
       body: Column(
         children: [

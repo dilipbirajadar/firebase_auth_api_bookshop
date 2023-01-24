@@ -361,3 +361,7 @@ errorMethod(BuildContext context, Object? error) {}
 onLoginSuccess(BuildContext context) {
   Navigator.pushNamed(context, '/home');
 }
+
+onCartClick(BuildContext context) {
+  Navigator.pushNamed(context, '/cart');
+}
