@@ -1,4 +1,5 @@
 import 'package:book_recycler/blocs/get_all_books_blocs.dart';
+import 'package:book_recycler/model/globals.dart';
 import 'package:book_recycler/screens/home_screen.dart';
 import 'package:book_recycler/screens/login_screen.dart';
 import 'package:book_recycler/shared/color.dart';
@@ -104,4 +105,15 @@ class BuyBooksScreen extends StatelessWidget {
 
     );
   }
+}
+
+onCartClickData(BuildContext context){
+  if(globalBooksList.isEmpty){
+    //Dialog dialog = Dialog(child:  Text('Please add some book'),);
+    print('please add some book to proceed further.');
+    Navigator.pushNamed(context, '/cart');
+  }else{
+    Navigator.pushNamed(context, '/cart');
+  }
+
 }

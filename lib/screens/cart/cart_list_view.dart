@@ -1,15 +1,21 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import '../../model/books.dart';
+
 import 'cart_image.dart';
 
 class BooksListView extends StatelessWidget {
-  int price;
+  //int price;
+  List<BooksModelResponseData> booksData = <BooksModelResponseData> [] ;
+  int index;
   //double totalprice;
-  BooksListView(
+  /*BooksListView(
     this.price,
     //this.totalprice
-  );
+  );*/
+
+  BooksListView(this.booksData,this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +29,8 @@ class BooksListView extends StatelessWidget {
       ),
       margin: EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
       child: ListTile(
-        title: Text('Book 1'), //book name returned from api
-        subtitle: Text('Author'), //Author name returned from api
+        title: Text(booksData[index].name), //book name returned from api
+        subtitle: Text(booksData[index].author), //Author name returned from api
         leading: Column(
           children: [
             CartImage(),
@@ -34,7 +40,7 @@ class BooksListView extends StatelessWidget {
         trailing: Column(
           children: [
 
-            Text('#$price',
+            Text('#${booksData[index].price}',
                 style:
                     TextStyle(color: Colors.green)), //price returned from api
             SizedBox(height: 2),

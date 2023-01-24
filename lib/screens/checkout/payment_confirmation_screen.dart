@@ -258,10 +258,13 @@ class _listviewWidgetState extends State<listviewWidget> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: globals.entries.length, //count  returned from api
+        //itemCount: globals.entries.length, //count  returned from api
+        itemCount: globals.globalBooksList.length, //count  returned from api
         itemBuilder: ((context, index) {
-          return BooksListView(globals.entries[
-              index]); // price from this list view is taken as output for calculating the total
+          /*return BooksListView(globals.entries[
+              index]);*/ // price from this list view is taken as output for calculating the total
+
+          return BooksListView(globals.globalBooksList,index);
         }),
       ),
     );

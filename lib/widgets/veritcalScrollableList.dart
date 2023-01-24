@@ -1,4 +1,5 @@
 import 'package:book_recycler/model/books.dart';
+import 'package:book_recycler/model/globals.dart';
 import 'package:flutter/material.dart';
 
 import '../blocs/get_all_books_blocs.dart';
@@ -15,6 +16,7 @@ class VerticalListWidget extends StatefulWidget {
 
 class _VerticalListWidgetState extends State<VerticalListWidget> {
   late Future<List<BooksModelResponseData>> _future;
+   List<BooksModelResponseData> booksList =  <BooksModelResponseData>[];
 
   @override
   void initState() {
@@ -124,7 +126,24 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.green
                                     ),
-                                    onPressed: () { Navigator.pushNamed(context, '/cart'); },
+                                    /**
+                                     * avigator.pushNamed(
+                                        context,
+                                        '/recipe_details',
+                                        arguments: {
+                                        'recipe_data': snapshot.data?[index],
+                                        'index': index,
+                                        },
+                                        );
+                                     */
+                                    //onPressed: () { Navigator.pushNamed(context, '/cart',arguments: {'books_data_list':snapshot.data![index]}); },
+                                    onPressed: () {
+                                      booksList.add(snapshot.data![index]);
+                                      globalBooksList = booksList;
+
+                                      print(globalBooksList.length);
+                                      print(globalBooksList![0].price);
+                                      },
                                     child: Text('ADD',
                                       style: TextStyle(
                                         fontSize: 12,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import '../../model/books.dart';
 import '../../model/globals.dart';
 import 'cart_image.dart';
 import 'transform.dart';
@@ -26,6 +27,18 @@ class _cartState extends State<CartCardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<BooksModelResponseData> booksData = globalBooksList;
+    /*final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+    final booksData = arguments['books_data_list'] as List<BooksModelResponseData>;*/
+
+    for (var i = 0; i < booksData.length; i++) {
+      globals.totalPriceSum = booksData[i].price + globals.totalPriceSum;
+      //totalPriceSum = snapshot.data.fold(0, (previousValue, element) => previousValue + int.tryParse(User.fromMap(item).price));
+    }
+    //globals.totalPriceSum = booksData.price as double;
+
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(
@@ -42,13 +55,15 @@ class _cartState extends State<CartCardScreen> {
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: entries.length, //count  returned from api
+                //itemCount: entries.length, //count  returned from api
+                itemCount: booksData.length, //count  returned from api
                 itemBuilder: ((context, index) {
                   if (globals.totalPriceSum == 0) {
                     totalItemsPrice();
                   }
-                  return BooksListView(entries[
-                      index]); // price from this list view is taken as output for calculating the total
+                  /*return BooksListView(entries[
+                      index]);*/ // price from this list view is taken as output for calculating the total
+                  return BooksListView(booksData,index);
                 }),
               ),
             ),
