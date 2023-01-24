@@ -54,8 +54,8 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                       width: deviceWidth(context)*0.2,
                       height: deviceHeight(context) * 0.15,
                       child:
-                      Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
-                      //Image(image: NetworkImage(snapshot.data![index].imageName),
+                      //Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
+                      Image(image: NetworkImage(snapshot.data![index].imageName),
                         fit: BoxFit.fill,
                       ),
                     ),
