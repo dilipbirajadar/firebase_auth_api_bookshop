@@ -24,8 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     late Future<LoginSignUpResponse> _clients;
 
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
 
     final _formKey = GlobalKey<FormState>();
     final emailController = TextEditingController();
@@ -129,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // width: MediaQuery.of(context).size.width * 0.6,
                       child: Center(
                         child: TextField(
-                          style: TextStyle(height: 2.3),
+                          style: TextStyle(height: 1),
                           keyboardType: TextInputType.emailAddress,
                           textAlign: TextAlign.left,
                           onChanged: (value) {},
@@ -158,23 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(0.0))),
-                            suffix: IconButton(
-                                onPressed: () {
-                                  //add Icon button at end of TextField
-                                  setState(() {
-                                    //refresh UI
-                                    if (passenable) {
-                                      //if passenable == true, make it false
-                                      passenable = false;
-                                    } else {
-                                      passenable =
-                                          true; //if passenable == false, make it true
-                                    }
-                                  });
-                                },
-                                icon: Icon(passenable == true
-                                    ? Icons.remove_red_eye
-                                    : Icons.password))
+
                             //eye icon if passenable = true, else, Icon is ***__
                             ),
                         controller: passwordController,
