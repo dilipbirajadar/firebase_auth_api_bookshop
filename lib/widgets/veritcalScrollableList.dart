@@ -53,9 +53,10 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                     Container(
                       width: deviceWidth(context)*0.2,
                       height: deviceHeight(context) * 0.15,
+                      padding: EdgeInsets.only(left: 5),
                       child:
-                      //Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
-                      Image(image: NetworkImage(snapshot.data![index].imageName),
+                      Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
+                      //Image(image: NetworkImage(snapshot.data![index].imageName),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -72,6 +73,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           Container(
                               height: deviceHeight(context) * 0.03,
                               width: deviceWidth(context)*0.8,
+                              padding: EdgeInsets.only(left: 5),
                               child: Align(
                                 alignment: Alignment.bottomLeft,
                                 child: Text(snapshot.data![index].name,
@@ -85,6 +87,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           Container(
                             height: deviceHeight(context) * 0.04,
                             width: deviceWidth(context)*0.8,
+                            padding: EdgeInsets.only(left: 5),
                             child: Text(snapshot.data![index].author,
                               style: TextStyle(
                                   fontSize: 14,
@@ -107,6 +110,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                     ),),
                                 ),
                                 Container(
+                                  padding: EdgeInsets.only(right: 5),
                                   height: deviceHeight(context) * 0.04,
                                   width: deviceWidth(context)*0.2,
                                   child:  ElevatedButton(

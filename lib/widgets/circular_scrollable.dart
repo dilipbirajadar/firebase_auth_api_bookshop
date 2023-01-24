@@ -1,4 +1,7 @@
+import 'package:book_recycler/model/category.dart';
 import 'package:flutter/material.dart';
+
+import '../model/category_model.dart';
 
 class CircularWidget extends StatefulWidget {
   CircularWidget({ super.key});
@@ -10,9 +13,11 @@ class CircularWidget extends StatefulWidget {
 
 class _CircularWidgetState extends State<CircularWidget> {
   var tappedIndex = 0;
+  late List<CategoryModel> categoryModel =  category;
 
   @override
   Widget build(BuildContext context) {
+
     double deviceHeight(BuildContext context) =>
         MediaQuery.of(context).size.height;
     double deviceWidth(BuildContext context) =>
@@ -22,20 +27,24 @@ class _CircularWidgetState extends State<CircularWidget> {
 
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: 10,
+      itemCount: categoryModel.length,
       itemBuilder: (BuildContext context, int index) =>   Container(
         width: deviceWidth(context) * 0.2,
         height: deviceHeight(context) * 0.1,
         child: Column(
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage(
-                  'images/google_image.png'), //NetworkImage
+              //backgroundImage: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'), //NetworkImage
+              backgroundImage: NetworkImage(categoryModel[index].url), //NetworkImage
               radius: deviceHeight(context)*0.04,
             ),
-            Text('Title',
-            style: TextStyle(
-              fontSize: 10
+
+            const SizedBox(width: 1 ,height: 1,),
+
+            Text(categoryModel[index].name,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold
             ),)
           ],
 
