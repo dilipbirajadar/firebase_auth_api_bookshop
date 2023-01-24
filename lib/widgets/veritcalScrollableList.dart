@@ -53,7 +53,6 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                     Container(
                       width: deviceWidth(context)*0.2,
                       height: deviceHeight(context) * 0.15,
-                      padding: EdgeInsets.only(left: 5),
                       child:
                       Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
                       //Image(image: NetworkImage(snapshot.data![index].imageName),
@@ -141,7 +140,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
         }
         return SizedBox(
           child: CircularProgressIndicator(),
-          height: 10.0,
+          height: 5.0,
           width: 120.0,
         );
       }),
