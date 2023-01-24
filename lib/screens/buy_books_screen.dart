@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:book_recycler/blocs/get_all_books_blocs.dart';
 import 'package:book_recycler/model/globals.dart';
 import 'package:book_recycler/screens/home_screen.dart';
@@ -31,6 +32,11 @@ class BuyBooksScreen extends StatelessWidget {
         leading: Icon(Icons.menu),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {onCartClick(context);}),
+
+          /*Badge(
+            badgeContent: Text(globalBooksList.length.toString()),
+            child: Icon(Icons.shopping_cart),
+          )*/
         ],
 
         /*leading: Builder(
