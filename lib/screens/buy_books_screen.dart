@@ -1,5 +1,6 @@
 import 'package:book_recycler/blocs/get_all_books_blocs.dart';
 import 'package:book_recycler/screens/home_screen.dart';
+import 'package:book_recycler/shared/color.dart';
 import 'package:book_recycler/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,13 @@ class BuyBooksScreen extends StatelessWidget {
               margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.04,
               width: deviceWidth(context),
-              child: Text('MOST POPULAR')
+              child: const Text('MOST POPULAR',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color:AppColor.secondaryColor
+                  )
+              )
           ),
           Container(
               margin: EdgeInsets.only(top: deviceHeight(context)*0.01),
@@ -68,7 +75,12 @@ class BuyBooksScreen extends StatelessWidget {
               margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.04,
               width: deviceWidth(context),
-              child: Text('All Books')
+              child: const Text('All Books',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color:AppColor.secondaryColor
+                  ))
           ),
           Container(
             height: deviceHeight(context)*0.25,

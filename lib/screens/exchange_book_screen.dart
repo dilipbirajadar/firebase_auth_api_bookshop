@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../shared/color.dart';
 import '../widgets/circular_scrollable.dart';
 import '../widgets/horizontal.dart';
 import '../widgets/search_bar.dart';
@@ -44,7 +45,13 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
                     margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
                     height: deviceHeight(context)*0.04,
                     width: deviceWidth(context),
-                    child: Text('MOST POPULAR')
+                    child: const Text('MOST POPULAR',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color:AppColor.secondaryColor
+                        )
+                    )
                 ),
                 Container(
                     margin: EdgeInsets.only(top: deviceHeight(context)*0.01),
@@ -56,7 +63,12 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
                     margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
                     height: deviceHeight(context)*0.04,
                     width: deviceWidth(context),
-                    child: Text('All Books')
+                    child: const Text('All Books',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color:AppColor.secondaryColor
+                        ))
                 ),
                 Container(
                   height: deviceHeight(context)*0.25,
@@ -65,6 +77,7 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
                 )
 
               ],
+
             )
           )
 
