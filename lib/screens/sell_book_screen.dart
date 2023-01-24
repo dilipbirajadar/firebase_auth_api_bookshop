@@ -22,7 +22,7 @@ class _SellBookScreenState extends State<SellBookScreen> {
         MediaQuery.of(context).size.width;
 
     return Scaffold(
-
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(title: const Text('Sell Books'),backgroundColor: Colors.green,),
       body: Container(
           child: Center(
@@ -71,8 +71,7 @@ class _SellBookScreenState extends State<SellBookScreen> {
                 ),
                 Container(
                   height: deviceHeight(context)*0.25,
-                  child:
-                  VerticalListWidget(),
+                  child: VerticalListWidget(),
                 )
 
               ],

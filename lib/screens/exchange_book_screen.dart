@@ -22,7 +22,7 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
         MediaQuery.of(context).size.width;
 
     return Scaffold(
-
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(title: const Text('Exchange Books'),backgroundColor: Colors.green,),
       body: Container(
 

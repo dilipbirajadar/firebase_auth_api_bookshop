@@ -20,6 +20,7 @@ class BuyBooksScreen extends StatelessWidget {
         MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: //AppBar(title: const Text('Buy Books'),backgroundColor: Colors.green),
       AppBar(
         title:const Text('Buy Books') ,
@@ -44,7 +45,7 @@ class BuyBooksScreen extends StatelessWidget {
           Container(
               margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.05,
-              width: deviceWidth(context),
+              width: deviceWidth(context)*1,
               child: SearchWidget()
           ),
           Container(

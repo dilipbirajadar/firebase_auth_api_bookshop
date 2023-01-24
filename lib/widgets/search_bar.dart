@@ -23,9 +23,8 @@ class _SearchWidgetState extends State<SearchWidget> {
     // setState(() {});
 
     return Container(
-      width: deviceWidth(context) * 0.8,
-      margin: EdgeInsets.only(
-          left: deviceWidth(context) * 0.1, right: deviceWidth(context) * 0.1),
+      width: deviceWidth(context) * 1,
+      margin: EdgeInsets.only(left: 5, right: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: AppColor.secondaryColor),
@@ -42,7 +41,7 @@ class _SearchWidgetState extends State<SearchWidget> {
             ),
           ),
           Container(
-              width: deviceWidth(context) * 0.7 - 2,
+              width: deviceWidth(context) * 0.8,
               height: deviceHeight(context) * 0.05,
               child: TextField(
                 decoration: InputDecoration(
