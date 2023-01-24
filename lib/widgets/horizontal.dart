@@ -32,7 +32,7 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
           width: deviceWidth(context) * 0.35,
           height: deviceHeight(context) * 0.25,
           //child: CardWidget(),
-          child: CardWidget(),
+          child: CardWidget(index),
     ),
     );
   }

@@ -2,5 +2,6 @@ class MostPopular {
   String name;
   String url;
   String description;
-  MostPopular(this.name, this.url,this.description);
+  String price;
+  MostPopular(this.name, this.url,this.description, this.price);
 }

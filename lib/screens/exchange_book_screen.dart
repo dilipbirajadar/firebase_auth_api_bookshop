@@ -42,7 +42,7 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
                     child: CircularWidget()
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02,left: 5,right: 5),
                     height: deviceHeight(context)*0.04,
                     width: deviceWidth(context),
                     child: const Text('MOST POPULAR',
@@ -54,13 +54,13 @@ class _ExchangeBookScreenState extends State<ExchangeBookScreen> {
                     )
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: deviceHeight(context)*0.01),
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.01,left: 5,right: 5),
                     height: deviceHeight(context)*0.25,
                     width: deviceWidth(context),
                     child: HorizontalWidget()
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02,left: 5,right: 5),
                     height: deviceHeight(context)*0.04,
                     width: deviceWidth(context),
                     child: const Text('All Books',
