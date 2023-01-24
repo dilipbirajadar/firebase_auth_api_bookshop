@@ -125,9 +125,10 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                         backgroundColor: Colors.green
                                     ),
                                     onPressed: () { Navigator.pushNamed(context, '/cart'); },
-                                    child: Text('Add',
+                                    child: Text('ADD',
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w300
                                       ),),
                                   ),
                                 )

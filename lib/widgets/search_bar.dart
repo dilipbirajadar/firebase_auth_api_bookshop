@@ -49,9 +49,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                   border: InputBorder.none,
                   hintText: 'Search topics tiles or authors',
                   hintStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 7,
-                    fontStyle: FontStyle.italic,
+                    color: Colors.grey,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.normal,
                   ),
                 ),
               ))

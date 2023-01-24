@@ -94,9 +94,10 @@ class _CardWidgetState extends State<CardWidget> {
                           backgroundColor: Colors.green
                         ),
                         onPressed: () { Navigator.pushNamed(context, '/cart'); },
-                        child: Text('Add',
+                        child: Text('ADD',
                           style: TextStyle(
-                              fontSize: 5,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w300
                           ),),
                       ),
 
