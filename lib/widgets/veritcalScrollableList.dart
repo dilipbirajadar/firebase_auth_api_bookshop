@@ -135,7 +135,11 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
         } else if (snapshot.hasError) {
           return Text(snapshot.error.toString());
         }
-        return CircularProgressIndicator();
+        return SizedBox(
+          child: CircularProgressIndicator(),
+          height: 10.0,
+          width: 120.0,
+        );
       }),
     );
   }

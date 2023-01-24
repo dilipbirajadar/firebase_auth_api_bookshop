@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/circular_scrollable.dart';
+import '../widgets/horizontal.dart';
+import '../widgets/search_bar.dart';
+import '../widgets/veritcalScrollableList.dart';
+
 class SellBookScreen extends StatefulWidget {
   const SellBookScreen({Key? key}) : super(key: key);
 
@@ -10,30 +15,56 @@ class SellBookScreen extends StatefulWidget {
 class _SellBookScreenState extends State<SellBookScreen> {
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+    double deviceHeight(BuildContext context) =>
+        MediaQuery.of(context).size.height;
+    double deviceWidth(BuildContext context) =>
+        MediaQuery.of(context).size.width;
 
     return Scaffold(
 
       appBar: AppBar(title: const Text('Sell Books'),backgroundColor: Colors.green,),
       body: Container(
-          height: height/2,
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children:  [
-                const Text('Sell Book Page',style: TextStyle(color: Colors.green, fontSize: 28, fontWeight: FontWeight.bold),),
-
-                const SizedBox(width: 10,height: 10,),
-
-                ElevatedButton(onPressed: (){
-                  Navigator.pushNamed(context, '/add');
-                } , child: const Text('Add',)),
-
-                const SizedBox(width: 10,height: 10,),
+              children: [
+                Container(
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
+                    height: deviceHeight(context)*0.05,
+                    width: deviceWidth(context),
+                    child: SearchWidget()
+                ),
+                Container(
+                    margin: EdgeInsets.only(top:deviceHeight(context)*0.02),
+                    height: deviceHeight(context)*0.1,
+                    width: deviceWidth(context),
+                    child: CircularWidget()
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
+                    height: deviceHeight(context)*0.04,
+                    width: deviceWidth(context),
+                    child: Text('MOST POPULAR')
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.01),
+                    height: deviceHeight(context)*0.25,
+                    width: deviceWidth(context),
+                    child: HorizontalWidget()
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
+                    height: deviceHeight(context)*0.04,
+                    width: deviceWidth(context),
+                    child: Text('All Books')
+                ),
+                Container(
+                  height: deviceHeight(context)*0.25,
+                  child:
+                  VerticalListWidget(),
+                )
 
               ],
-            ),
+            )
           )
 
       ),
