@@ -75,6 +75,32 @@ class ApiHelper{
     }
   }
 
+  Future<List<BooksModelResponseData>> getBooksNormal() async {
+    String idToken = globals.authIdTokenFB;
+    print('Token in bloc ${idToken}');
+
+    // use async to define asyn functions in dart
+    Response response = await get(Uri.parse(
+        urlGetBooks+idToken)); // get request , await waits  till the response is available
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      print(response.body);
+      // 200 -valid response
+      // convert response body into dart based List
+      List<dynamic> body = jsonDecode(response.body);
+      print(body); // using dart api to convert json based collection to List in dart
+      List<BooksModelResponseData> clients =
+      body.map((dynamic data) => BooksModelResponseData.fromJson(data)).toList();
+      print(clients); // using factory methods to generate Dart objects from json object
+
+
+      return clients;
+    } else {
+      // error processing request
+      throw "unable to fetch details";
+    }
+  }
+
   Future<List<MostPopularData>> getMostPopular() async {
     // use async to define asyn functions in dart
     Response response = await get(Uri.parse(
@@ -160,7 +186,7 @@ class ApiHelper{
   }
 
   /// bloc pattern signup api call
-  Future<BooksModelResponseData> getBooks() async{
+  Future<List<BooksModelResponseData>> getBooks() async{
     String idToken = globals.authIdTokenFB;
     print('Token in bloc ${idToken}');
     //String idToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImQwNTU5YzU5MDgzZDc3YWI2NDUxOThiNTIxZmM4ZmVmZmVlZmJkNjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYm9vay1yZWN5Y2xlci0xODY0ZiIsImF1ZCI6ImJvb2stcmVjeWNsZXItMTg2NGYiLCJhdXRoX3RpbWUiOjE2NzQ0OTE4ODgsInVzZXJfaWQiOiJSSW5UenZ0bTY0YXRxVTBkb09XRk5Xb1A1NTcyIiwic3ViIjoiUkluVHp2dG02NGF0cVUwZG9PV0ZOV29QNTU3MiIsImlhdCI6MTY3NDQ5MTg4OCwiZXhwIjoxNjc0NDk1NDg4LCJlbWFpbCI6ImRwMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZHAxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.R6tjOYmmnNSOMFktMjg3naGjSywaBL7OwrzvZnZpQys73dfmR7Hc3Nz8WyA2APWD7Fk2bxOzDnhROmWMmG6k-qPOhSggZPAOwRcUSdl5q3p9fw408Zyf3aqg7vFo9XrwIkmje6kQLpmScRsABSlt1ee089En06nPTZpA35DhPgC_9aliZ99t7xJWPusLvJbHDs3103UJp0Lg8MBUW-pqijdzrIIHEDiq308G3BsweJnxHGJch05bVgx_hQ5JdKOsCbzsZUTGubXK1Vt2wZ2O1aHJ4CyjmYI0XVHfjSjt23K_7l41wwoSTp7nkqBOf6WR8_aKHFlzu1-Zg0YeRq-3qg";
@@ -169,15 +195,15 @@ class ApiHelper{
     // convert response body into dart based List
     List<dynamic> body = jsonDecode(response.body);
 
-    print(body); // using dart api to convert json based collection to List in dart
+    //print(body); // using dart api to convert json based collection to List in dart
 
     List<BooksModelResponseData> clients = body.map((dynamic data) => BooksModelResponseData.fromJson(data)).toList();
-    print(clients);
+    print(clients.length);
     /// print response body
     //print(response.body);
 
     if(response.statusCode == 200 || response.statusCode== 201){
-      return BooksModelResponseData.fromJson(json.decode(response.body));
+      return clients;
     }else{
       throw Exception('Failed to fetch books details') ;
     }

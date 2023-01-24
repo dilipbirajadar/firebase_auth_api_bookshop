@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/circular_scrollable.dart';
 import '../widgets/horizontal.dart';
+import '../widgets/search_bar.dart';
 import '../widgets/veritcalScrollableList.dart';
 
 class BuyBooksScreen extends StatelessWidget {
@@ -40,39 +41,39 @@ class BuyBooksScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-              margin: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.05,
               width: deviceWidth(context),
-              child: Text('This will contains search widget')
+              child: SearchWidget()
           ),
           Container(
-              margin: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top:deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.1,
               width: deviceWidth(context),
               child: CircularWidget()
           ),
           Container(
-              margin: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.04,
               width: deviceWidth(context),
               child: Text('MOST POPULAR')
           ),
           Container(
-              margin: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: deviceHeight(context)*0.01),
               height: deviceHeight(context)*0.25,
               width: deviceWidth(context),
               child: HorizontalWidget()
           ),
           Container(
-              margin: const EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: deviceHeight(context)*0.02),
               height: deviceHeight(context)*0.04,
               width: deviceWidth(context),
               child: Text('All Books')
           ),
           Container(
             height: deviceHeight(context)*0.25,
-            child: VerticalListWidget(),
-
+            child:
+            VerticalListWidget(),
           )
 
         ],

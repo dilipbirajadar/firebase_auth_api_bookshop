@@ -10,15 +10,15 @@ class _GetAllBooks{
   //Data provider -Stream
   //Data Consumer -Sink
   //PublishSubject -Act as a Stream and Sink
-  final _getBooksFetcher = PublishSubject <BooksModelResponseData> ();
+  final _getBooksFetcher = PublishSubject <List<BooksModelResponseData>> ();
 
   get getBooksData => _getBooksFetcher.stream;//provide data to UI
 
   getAllBooksList() async {
-    BooksModelResponseData booksModel = await repository.getBookAPI();
+    List<BooksModelResponseData> booksModel = await repository.getBookAPI();
 
-    print("books name ${booksModel.name}");
-    print("book author ${booksModel.author}");
+    print("books name ${booksModel[0].name}");
+    print("book author ${booksModel[0].author}");
 
     _getBooksFetcher.sink.add(booksModel);//Add data to the PublishSubject object _movieFetcher
   }

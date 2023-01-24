@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+
+import '../shared/color.dart';
+
+
+class SearchWidget extends StatefulWidget {
+  const SearchWidget({super.key});
+
+  @override
+  State<SearchWidget> createState() => _SearchWidgetState();
+}
+
+class _SearchWidgetState extends State<SearchWidget> {
+  var tappedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    double deviceHeight(BuildContext context) =>
+        MediaQuery.of(context).size.height;
+    double deviceWidth(BuildContext context) =>
+        MediaQuery.of(context).size.width;
+
+    // setState(() {});
+
+    return Container(
+      width: deviceWidth(context) * 0.8,
+      margin: EdgeInsets.only(
+          left: deviceWidth(context) * 0.1, right: deviceWidth(context) * 0.1),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: AppColor.secondaryColor),
+          color: Colors.white),
+      child: Row(
+        children: [
+          Container(
+            width: deviceWidth(context) * 0.1,
+            height: deviceHeight(context) * 0.05,
+            child: Icon(
+              Icons.search,
+              color: Colors.black,
+              size: 20,
+            ),
+          ),
+          Container(
+              width: deviceWidth(context) * 0.7 - 2,
+              height: deviceHeight(context) * 0.05,
+              child: TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom:deviceHeight(context) * 0.05/2 ),
+                  border: InputBorder.none,
+                  hintText: 'Search topics tiles or authors',
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 7,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ))
+        ],
+      ),
+    );
+  }
+}
