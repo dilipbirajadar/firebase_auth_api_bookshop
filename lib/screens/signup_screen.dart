@@ -53,7 +53,7 @@ class _SignupScreenState extends State<SignupScreen> {
         color: Color(0xFFF0F6F1),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Sign Up",
               style: TextStyle(
                   color: Color.fromRGBO(21,100,52, 0.8),
@@ -80,7 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           keyboardType: TextInputType.emailAddress,
                           textAlign: TextAlign.left,
                           onChanged: (value) {},
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: "Email",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(0.0))
@@ -102,7 +102,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           textAlign: TextAlign.left,
                           maxLength: 10,
                           onChanged: (value) {},
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: "Mobile",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(0.0))
@@ -125,7 +125,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           onChanged: (value) {},
                           decoration: InputDecoration(
                               hintText: "New Password",
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(0.0))
                               ),
                               suffix: IconButton(onPressed: (){ //add Icon button at end of TextField
@@ -156,7 +156,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           onChanged: (value) {},
                           decoration: InputDecoration(
                               hintText: "Confirm Password",
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(0.0))
                               ),
                               suffix: IconButton(onPressed: (){ //add Icon button at end of TextField
@@ -234,7 +234,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                         minWidth: 300.0,
                         height: 45.0,
-                        child: Text(
+                        child: const Text(
                           "Sign Up",
                           style:
                           TextStyle(color:Colors.white,fontWeight: FontWeight.w500, fontSize: 20.0),
@@ -245,7 +245,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       height: MediaQuery.of(context).size.height * 0.03,
                     ),
                     RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         children: <TextSpan>[
                           TextSpan(
                               text: "By Signing Up, you agree to our ", style: TextStyle(fontFamily: 'Muli', color: Colors.black, fontSize: 15)),
@@ -255,7 +255,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ],
                       ),),
                     RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         children: <TextSpan>[
                           TextSpan(
                               text: "Conditions ", style: TextStyle(fontFamily: 'Muli', color: Colors.blueAccent, fontSize: 15)),

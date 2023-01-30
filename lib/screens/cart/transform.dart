@@ -14,7 +14,7 @@ class transform extends StatelessWidget {
               color: Colors.green,
               borderRadius: BorderRadius.circular(10),
               shape: BoxShape.rectangle,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   //offset: Offset(0.0, 2.0),
                   color: Colors.green,
@@ -24,7 +24,7 @@ class transform extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const [
                 Padding(
                   padding: EdgeInsets.only(left: 2.0),
                   child: Text(

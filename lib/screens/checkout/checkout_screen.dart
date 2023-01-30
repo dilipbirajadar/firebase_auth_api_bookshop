@@ -9,7 +9,7 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 246, 241),
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(
         title: const Text(
           'Checkout',
@@ -21,10 +21,10 @@ class CheckoutScreen extends StatelessWidget {
           child: Column(
         children: [
           textwidget("Shipping"),
-          shippingwidget(),
+          const shippingwidget(),
           textwidget("Payment"),
-          creditcardwidget(),
-          SizedBox(height: 30),
+          const creditcardwidget(),
+          const SizedBox(height: 30),
           paynowlistview(globals.totalPriceSum),
         ],
       )),
@@ -41,14 +41,14 @@ class textwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
       //padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
       child: Align(
         alignment: Alignment.topLeft,
         child: Text(
           "$text",
           //textAlign: TextAlign.right,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.green,
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -65,24 +65,24 @@ class shippingwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
       height: 50,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
       child: Row(children: [
-        SizedBox(height: 10, width: 20),
+        const SizedBox(height: 10, width: 20),
         Container(
-          child: Icon(
+          child: const Icon(
             Icons.local_shipping_outlined,
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 10, width: 20),
+        const SizedBox(height: 10, width: 20),
         Container(
-          child: (Text(
+          child: (const Text(
             "Add Address",
             style: TextStyle(
               color: Colors.black,
@@ -91,10 +91,10 @@ class shippingwidget extends StatelessWidget {
             ),
           )),
         ),
-        SizedBox(height: 10, width: 160),
+        const SizedBox(height: 10, width: 160),
         Container(
           child: InkWell(
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.green,
               ),
@@ -123,10 +123,10 @@ class _creditcardwidgetState extends State<creditcardwidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+        margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
         height: 260,
         width: 400,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.rectangle,
           color: Colors.white,
         ),
@@ -135,18 +135,18 @@ class _creditcardwidgetState extends State<creditcardwidget> {
             child: Align(
               alignment: Alignment.topLeft,
               child: Row(children: [
-                SizedBox(height: 10, width: 20),
+                const SizedBox(height: 10, width: 20),
                 Container(
-                  margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                  child: Icon(
+                  margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                  child: const Icon(
                     Icons.credit_card_outlined,
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 10, width: 20),
+                const SizedBox(height: 10, width: 20),
                 Container(
-                  margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                  child: (Text(
+                  margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                  child: (const Text(
                     "Add Credit/Debit Card",
                     style: TextStyle(
                       color: Colors.black,
@@ -163,8 +163,8 @@ class _creditcardwidgetState extends State<creditcardwidget> {
           textfieldwidget(
               "Card Number", 40, 400, 10, 5, 10, 10, globals.creditcardnumber),
           Container(
-            margin: EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
-            child: Align(
+            margin: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
+            child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   "Expiry Date",
@@ -211,14 +211,14 @@ class textfieldwidget extends StatelessWidget {
       child: TextFormField(
         controller: txt,
         textAlign: TextAlign.justify,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 13,
         ),
         decoration: InputDecoration(
             border:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-            hintStyle: TextStyle(color: Colors.black),
+                const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+            hintStyle: const TextStyle(color: Colors.black),
             hintText: "$cardtext"),
       ),
       //),
@@ -235,13 +235,13 @@ class paynowlistview extends StatelessWidget {
     return Container(
       height: 70,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
       child: ListView(
-          physics: NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.only(bottom: 40),
+          physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.only(bottom: 40),
           children: [
             ListTile(
               title: const Text('Total',
@@ -251,7 +251,7 @@ class paynowlistview extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   )),
               subtitle: Text('# $totalprice',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -296,15 +296,15 @@ class paynowlistview extends StatelessWidget {
                                 state: globals.state.text));
                       }
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                    ),
+                    child: const Text(
                       "Pay Now",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
                       ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
                     ),
                   ),
                 ],

@@ -16,7 +16,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 246, 241),
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(
         title: const Text(
           'Add Address',
@@ -30,8 +30,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
           addresstextwidget("*Required fields."),
           addresssubdivisionone(),
           addresssubdivisiontwo(),
-          addresssubdivisionthree(),
-          addressconfirm(),
+          const addresssubdivisionthree(),
+          const addressconfirm(),
         ],
       )),
     );
@@ -42,11 +42,11 @@ class addresssubdivisionone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
       height: 295,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
@@ -60,7 +60,7 @@ class addresssubdivisionone extends StatelessWidget {
           Container(
             child: Row(children: [
               //textfieldwidget("+91", 40, 70, 10, 5, 10, 5),
-              phonefield(),
+              const phonefield(),
               textfieldwidget(
                   "Phone Number*", 40, 190, 10, 5, 10, 25, globals.phoneNumber),
             ]),
@@ -82,11 +82,11 @@ class addresssubdivisiontwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
       height: 305,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
@@ -98,7 +98,7 @@ class addresssubdivisiontwo extends StatelessWidget {
           textfieldwidget("Address Title (Optional)", 40, 400, 10, 5, 10, 10,
               globals.addresstitle),
           addressfieldwithnavigator(globals.address),
-          streetaddresstextwidget(),
+          const streetaddresstextwidget(),
           cityfield("City*", globals.city),
           cityfield("State*", globals.state),
         ],
@@ -113,11 +113,11 @@ class addresssubdivisionthree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
       height: 119,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
@@ -126,7 +126,7 @@ class addresssubdivisionthree extends StatelessWidget {
           Container(
             child: addresssubtext("Billing Information"),
           ),
-          billinginfowidget(),
+          const billinginfowidget(),
         ],
       ),
     );
@@ -142,14 +142,14 @@ class addresstextwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
       //padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
       child: Align(
         alignment: Alignment.topLeft,
         child: Text(
           "$text",
           //textAlign: TextAlign.right,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.blueGrey,
             fontSize: 10,
             fontWeight: FontWeight.normal,
@@ -171,11 +171,11 @@ class _addressconfirmState extends State<addressconfirm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
       //padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
       height: 60,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         //color: Colors.white,
       ),
@@ -187,13 +187,13 @@ class _addressconfirmState extends State<addressconfirm> {
                 Container(
                   height: 60,
                   width: 170,
-                  padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
                   child: OutlinedButton(
-                    child: Text('CANCEL'),
+                    child: const Text('CANCEL'),
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.teal,
                       backgroundColor: Colors.white,
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                           color: Colors.black,
                           fontSize: 15,
                           fontStyle: FontStyle.normal),
@@ -209,13 +209,13 @@ class _addressconfirmState extends State<addressconfirm> {
                 Container(
                     height: 60,
                     width: 170,
-                    padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+                    padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
                     child: OutlinedButton(
-                      child: Text('SAVE'),
+                      child: const Text('SAVE'),
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.teal,
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: Colors.black,
                             fontSize: 15,
                             fontStyle: FontStyle.normal),
@@ -251,21 +251,21 @@ class addresssubtext extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
       //child: Align(
       // alignment: Alignment.topLeft,
       child: Row(children: [
-        SizedBox(height: 10, width: 20),
+        const SizedBox(height: 10, width: 20),
         Container(
           //margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-          child: Icon(Icons.circle_rounded, color: Colors.green),
+          child: const Icon(Icons.circle_rounded, color: Colors.green),
         ),
-        SizedBox(height: 10, width: 10),
+        const SizedBox(height: 10, width: 10),
         Container(
           child: (Text(
             "$text",
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 12,
               fontWeight: FontWeight.bold,
@@ -286,9 +286,9 @@ class phonefield extends StatelessWidget {
     return Container(
         height: 60,
         width: 100,
-        margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+        margin: const EdgeInsets.fromLTRB(10, 5, 10, 5),
         child: IntlPhoneField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             border: OutlineInputBorder(
               borderSide: BorderSide(),
             ),
@@ -312,11 +312,11 @@ class addressfieldwithnavigator extends StatelessWidget {
     return Container(
       height: 40,
       width: 400,
-      margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
+      margin: const EdgeInsets.fromLTRB(10, 5, 10, 10),
       child: TextFormField(
         controller: txt,
         textAlign: TextAlign.justify,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black12,
           fontSize: 13,
         ),
@@ -346,19 +346,19 @@ class cityfield extends StatelessWidget {
     return Container(
       height: 40,
       width: 400,
-      margin: EdgeInsets.fromLTRB(10, 5, 10, 10),
+      margin: const EdgeInsets.fromLTRB(10, 5, 10, 10),
       child: TextFormField(
         controller: txt,
         textAlign: TextAlign.justify,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black12,
           fontSize: 13,
         ),
         decoration: InputDecoration(
-            suffixIcon: Icon(Icons.arrow_drop_down_sharp),
+            suffixIcon: const Icon(Icons.arrow_drop_down_sharp),
             border:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-            hintStyle: TextStyle(color: Colors.black),
+                const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+            hintStyle: const TextStyle(color: Colors.black),
             hintText: "$text"),
       ),
       //),
@@ -372,16 +372,16 @@ class streetaddresstextwidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 0.0),
       child: Row(children: [
-        SizedBox(height: 10, width: 20),
+        const SizedBox(height: 10, width: 20),
         Container(
-          child: Icon(Icons.add, color: Colors.green),
+          child: const Icon(Icons.add, color: Colors.green),
         ),
-        SizedBox(height: 10, width: 10),
+        const SizedBox(height: 10, width: 10),
         Container(
-          child: (Text(
+          child: (const Text(
             "Street Address 2 (Optional)",
             style: TextStyle(
               color: Colors.green,
@@ -413,8 +413,8 @@ class _checkboxState extends State<billinginfowidget> {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
-            child: Align(
+            margin: const EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
+            child: const Align(
               alignment: Alignment.topLeft,
               child: Text(
                 "Billing Address*",
@@ -438,7 +438,7 @@ class _checkboxState extends State<billinginfowidget> {
                     check = value;
                   });
                 },
-                title: Text(
+                title: const Text(
                   "Same as Delivery Address",
                   style: TextStyle(
                     color: Colors.black,

@@ -24,7 +24,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
         child: Column(
           children: [
             Image.asset("images/lock_image.png", height: 120,),
-            Text(
+            const Text(
               textAlign: TextAlign.center,
               "Forgot Password ?",
               style: TextStyle(
@@ -36,7 +36,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            Text("Don't worry it happens, please enter the details associated with your account",
+            const Text("Don't worry it happens, please enter the details associated with your account",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontFamily: 'Muli', color: Colors.black, fontSize: 30)),
           SizedBox(
@@ -49,7 +49,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.left,
                   onChanged: (value) {},
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       hintText: "Email / Mobile",
@@ -77,7 +77,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                 },
                 minWidth: 300.0,
                 height: 45.0,
-                child: Text(
+                child: const Text(
                   "Get OTP",
                   style:
                   TextStyle(color:Colors.white,fontWeight: FontWeight.w500, fontSize: 20.0),

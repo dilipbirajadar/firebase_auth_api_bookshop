@@ -22,7 +22,7 @@ class PaymentConfirmationScreen extends StatelessWidget {
     String email = routingArgument.email;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 246, 241),
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(
         title: const Text(
           'Order Confirmation',
@@ -36,21 +36,21 @@ class PaymentConfirmationScreen extends StatelessWidget {
             Container(
               child: Column(
                 children: [
-                  Confirmtextwidget(),
+                  const Confirmtextwidget(),
                   Container(
-                    margin: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                    margin: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
                     child: RichText(
                       text: TextSpan(
                         children: <TextSpan>[
-                          TextSpan(text: 'we sent an email to '),
+                          const TextSpan(text: 'we sent an email to '),
                           TextSpan(
                               text: '$email',
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(
+                          const TextSpan(
                               text: ' with your order confirmation and bill'),
                         ],
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 13,
                           fontWeight: FontWeight.normal,
@@ -59,10 +59,10 @@ class PaymentConfirmationScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0.0, 5.0, 120.0, 10.0),
+                    margin: const EdgeInsets.fromLTRB(0.0, 5.0, 120.0, 10.0),
                     child: Text(
                       getcurrentdate(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
@@ -77,22 +77,22 @@ class PaymentConfirmationScreen extends StatelessWidget {
             textwidget("Billing"),
             Billingwidget(),
             textwidget("Your Order"),
-            listviewWidget(),
+            const listviewWidget(),
             textwidget("Summary"),
             Container(
               child: ListView(
                 shrinkWrap: true,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading: Text('SubTotal'),
                     visualDensity: VisualDensity(horizontal: 0, vertical: -4),
                     trailing: Text('\$0,00'),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Text('Shipping'),
                     trailing: Text('\$0,00'),
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white, //color of divider
                     // width: 10, //width space of divider
                     thickness: 3, //thickness of divier line
@@ -100,7 +100,7 @@ class PaymentConfirmationScreen extends StatelessWidget {
                     endIndent: 10, //Spacing at the bottom of divider.
                   ),
                   ListTile(
-                    leading: Text(
+                    leading: const Text(
                       'Total',
                       style: TextStyle(
                         color: Colors.black,
@@ -123,7 +123,7 @@ class PaymentConfirmationScreen extends StatelessWidget {
                     '/buy_books',
                   );
                 },
-                child: Text(
+                child: const Text(
                   "CONTINUE SHOPPING",
                   style: TextStyle(
                     color: Colors.white,
@@ -167,26 +167,26 @@ class Billingwidget extends StatelessWidget {
     state = routingArgument.state;
 
     return Container(
-      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
       height: 100,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
             child: Column(
               children: [
-                SizedBox(height: 10, width: 20),
+                const SizedBox(height: 10, width: 20),
                 Container(
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       "$addressname",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -195,12 +195,12 @@ class Billingwidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       "$email",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -213,7 +213,7 @@ class Billingwidget extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       "+91 $phoneNumber",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -222,12 +222,12 @@ class Billingwidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       "$address,$city,$state",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -257,7 +257,7 @@ class _listviewWidgetState extends State<listviewWidget> {
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         //itemCount: globals.entries.length, //count  returned from api
         itemCount: globals.globalBooksList.length, //count  returned from api
         itemBuilder: ((context, index) {
@@ -283,10 +283,10 @@ class Confirmtextwidget extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                 height: 50.0,
                 width: 60.0,
-                child: Icon(
+                child: const Icon(
                   Icons.check_circle,
                   size: 50,
                   color: Colors.green,
@@ -298,8 +298,8 @@ class Confirmtextwidget extends StatelessWidget {
                     Container(
                       //height: 50.0,
                       //width: 60.0,
-                      padding: EdgeInsets.fromLTRB(0.0, 20.0, 130.0, 0.0),
-                      child: Text(
+                      padding: const EdgeInsets.fromLTRB(0.0, 20.0, 130.0, 0.0),
+                      child: const Text(
                         "Thank you!",
                         style: TextStyle(
                           color: Colors.black,
@@ -309,7 +309,7 @@ class Confirmtextwidget extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      child: Text(
+                      child: const Text(
                         "Your order #AB123 has been placed.",
                         style: TextStyle(
                           color: Colors.black,

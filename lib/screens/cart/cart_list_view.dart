@@ -27,12 +27,12 @@ class BooksListView extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
-      margin: EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
+      margin: const EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
       child: ListTile(
         title: Text(booksData[index].name), //book name returned from api
         subtitle: Text(booksData[index].author), //Author name returned from api
         leading: Column(
-          children: [
+          children: const [
             CartImage(),
             //transform(),
           ],
@@ -42,9 +42,9 @@ class BooksListView extends StatelessWidget {
 
             Text('#${booksData[index].price}',
                 style:
-                    TextStyle(color: Colors.green)), //price returned from api
-            SizedBox(height: 2),
-            Icon(
+                    const TextStyle(color: Colors.green)), //price returned from api
+            const SizedBox(height: 2),
+            const Icon(
               Icons.delete_outline,
               color: Colors.green,
             ),
@@ -63,7 +63,7 @@ class promotionsbox extends StatelessWidget {
     return Container(
       height: 70,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
@@ -72,11 +72,11 @@ class promotionsbox extends StatelessWidget {
           Container(
             height: 40,
             width: 150,
-            margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+            margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
             child: TextFormField(
               readOnly: true,
               textAlign: TextAlign.justify,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black12,
                 fontSize: 13,
               ),
@@ -90,10 +90,10 @@ class promotionsbox extends StatelessWidget {
           Container(
             height: 40,
             width: 150,
-            margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+            margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
             child: ElevatedButton(
               onPressed: null,
-              child: Text(
+              child: const Text(
                 "APPLY",
                 // style: TextStyle(
                 //   color: Colors.white,
@@ -128,16 +128,16 @@ class totallistview extends StatelessWidget {
       height: 55,
       width: 400,
       //padding: EdgeInsets.only(bottom: 3),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
-      child: ListView(physics: NeverScrollableScrollPhysics(),
+      child: ListView(physics: const NeverScrollableScrollPhysics(),
           //padding: EdgeInsets.only(bottom: 100),
           children: [
             ListTile(
               title: Text('Sub Total ($countofbooks books)',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -148,12 +148,12 @@ class totallistview extends StatelessWidget {
                     fontSize: 12,
                   )),
               trailing: Column(children: [
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text('#$totalprice',
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black)), //price returned from api
-                SizedBox(height: 2),
-                Text(
+                const SizedBox(height: 2),
+                const Text(
                   'FREE',
                   //style: TextStyle(color: Colors.black)
                 ),
@@ -173,13 +173,13 @@ class checkoutlistview extends StatelessWidget {
     return Container(
       height: 70,
       width: 400,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
       ),
       child: ListView(
-          physics: NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.only(bottom: 40),
+          physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.only(bottom: 40),
           children: [
             ListTile(
               title: const Text('Total',
@@ -189,7 +189,7 @@ class checkoutlistview extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   )),
               subtitle: Text('# $totalprice',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -204,15 +204,15 @@ class checkoutlistview extends StatelessWidget {
                         '/checkout',
                       );
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                    ),
+                    child: const Text(
                       "CHECKOUT",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
                       ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
                     ),
                   ),
                 ],

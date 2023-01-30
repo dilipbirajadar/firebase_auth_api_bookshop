@@ -23,7 +23,7 @@ class _OtpScreenState extends State<OtpScreen> {
         child: Column(
           children: [
             Image.asset("images/lock_image.png", height: 120,),
-            Text(
+            const Text(
               textAlign: TextAlign.center,
               "Enter OTP",
               style: TextStyle(
@@ -35,7 +35,7 @@ class _OtpScreenState extends State<OtpScreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            Text("Enter the 4 digit sent to your mobile / email",
+            const Text("Enter the 4 digit sent to your mobile / email",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontFamily: 'Muli', color: Colors.black, fontSize: 20,)),
             SizedBox(
@@ -47,7 +47,7 @@ class _OtpScreenState extends State<OtpScreen> {
               maxLength: 4,
               textAlign: TextAlign.left,
               onChanged: (value) {},
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
                   hintText: "OTP",
@@ -73,7 +73,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 },
                 minWidth: 300.0,
                 height: 45.0,
-                child: Text(
+                child: const Text(
                   "Submit",
                   style:
                   TextStyle(color:Colors.white,fontWeight: FontWeight.w500, fontSize: 20.0),

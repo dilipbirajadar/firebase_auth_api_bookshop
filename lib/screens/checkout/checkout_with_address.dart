@@ -28,7 +28,7 @@ class CheckoutWithAddress extends StatelessWidget {
     state = routingArgument.state;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 246, 241),
+      backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: AppBar(
         title: const Text(
           'Checkout',
@@ -41,19 +41,19 @@ class CheckoutWithAddress extends StatelessWidget {
           children: [
             textwidget("Shipping"),
             Container(
-                margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+                margin: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
                 height: 162,
                 width: 400,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: Colors.white,
                 ),
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
                       child: Column(children: [
-                        SizedBox(height: 10, width: 20),
+                        const SizedBox(height: 10, width: 20),
                         Container(
                           child: Row(
                             children: [
@@ -62,7 +62,7 @@ class CheckoutWithAddress extends StatelessWidget {
                                   alignment: Alignment.topLeft,
                                   child: Text(
                                     "$addressname",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -70,10 +70,10 @@ class CheckoutWithAddress extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10, width: 262),
+                              const SizedBox(height: 10, width: 262),
                               Container(
                                 child: InkWell(
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.arrow_forward_ios,
                                       color: Colors.green,
                                     ),
@@ -88,12 +88,12 @@ class CheckoutWithAddress extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               "$email",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
@@ -106,7 +106,7 @@ class CheckoutWithAddress extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: Text(
                               "+91 $phoneNumber",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
@@ -115,12 +115,12 @@ class CheckoutWithAddress extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               "$address,$city,$state",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
@@ -128,15 +128,15 @@ class CheckoutWithAddress extends StatelessWidget {
                             ),
                           ),
                         ),
-                        checkoutaddressinfo(),
-                        SizedBox(height: 10, width: 20),
+                        const checkoutaddressinfo(),
+                        const SizedBox(height: 10, width: 20),
                       ]),
                     ),
                   ],
                 )),
             textwidget("Payment"),
-            creditcardwidget(),
-            SizedBox(height: 30),
+            const creditcardwidget(),
+            const SizedBox(height: 30),
             paynowlistview(globals.totalPriceSum),
           ],
         ),
@@ -172,7 +172,7 @@ class _checkoutaddressinfoState extends State<checkoutaddressinfo> {
             check = value;
           });
         },
-        title: Text(
+        title: const Text(
           "Billing and delivery addresses are same.",
           style: TextStyle(
             color: Colors.black,
