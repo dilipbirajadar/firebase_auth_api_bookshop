@@ -26,7 +26,7 @@ class BuyBooksScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 240, 246, 241),
       appBar: //AppBar(title: const Text('Buy Books'),backgroundColor: Colors.green),
       AppBar(
-        title: Text('Buy Books') ,
+        title: const Text('Buy Books') ,
         backgroundColor: Colors.green,
 
         leading: Icon(Icons.menu),

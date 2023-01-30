@@ -24,7 +24,7 @@ class _SearchWidgetState extends State<SearchWidget> {
 
     return Container(
       width: deviceWidth(context) * 1,
-      margin: EdgeInsets.only(left: 5, right: 5),
+      margin: const EdgeInsets.only(left: 5, right: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: AppColor.secondaryColor),
@@ -34,7 +34,7 @@ class _SearchWidgetState extends State<SearchWidget> {
           Container(
             width: deviceWidth(context) * 0.1,
             height: deviceHeight(context) * 0.05,
-            child: Icon(
+            child: const Icon(
               Icons.search,
               color: Colors.black,
               size: 20,
@@ -48,7 +48,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                   contentPadding: EdgeInsets.only(bottom:deviceHeight(context) * 0.05/2 ),
                   border: InputBorder.none,
                   hintText: 'Search topics tiles or authors',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
                     fontWeight: FontWeight.bold,

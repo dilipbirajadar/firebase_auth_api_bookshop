@@ -52,7 +52,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                margin: EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
+                margin: const EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
                 padding: EdgeInsets.all(5),
                 width: deviceWidth(context)*1 ,
                 height: deviceHeight(context) * 0.18,
@@ -64,7 +64,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                       width: deviceWidth(context)*0.2,
                       height: deviceHeight(context) * 0.15,
                       child:
-                      Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
+                      const Image(image: NetworkImage('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361293878l/4248.jpg'),
                       //Image(image: NetworkImage(snapshot.data![index].imageName),
                         fit: BoxFit.fill,
                       ),
@@ -82,11 +82,11 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           Container(
                               height: deviceHeight(context) * 0.03,
                               width: deviceWidth(context)*0.65,
-                              padding: EdgeInsets.only(left: 5),
+                              padding: const EdgeInsets.only(left: 5),
                               child: Align(
                                 alignment: Alignment.bottomLeft,
                                 child: Text(snapshot.data![index].name,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600
                                   ),),
@@ -96,9 +96,9 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                           Container(
                             height: deviceHeight(context) * 0.04,
                             width: deviceWidth(context)*0.65,
-                            padding: EdgeInsets.only(left: 5),
+                            padding: const EdgeInsets.only(left: 5),
                             child: Text(snapshot.data![index].author,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400
                               ),),
@@ -111,15 +111,15 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                 Container(
                                   height: deviceHeight(context) * 0.04,
                                   width: deviceWidth(context)*0.5,
-                                  padding: EdgeInsets.only(left: 10),
+                                  padding: const EdgeInsets.only(left: 10),
                                   child: Text('₹ ${snapshot.data![index].price}',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold
                                     ),),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.only(right: 5),
+                                  padding: const EdgeInsets.only(right: 5),
                                   height: deviceHeight(context) * 0.04,
                                   width: deviceWidth(context)*0.2,
                                   child:  ElevatedButton(
@@ -144,7 +144,7 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
                                       print(globalBooksList.length);
                                       print(globalBooksList![0].price);
                                       },
-                                    child: Text('ADD',
+                                    child: const Text('ADD',
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w300
@@ -166,10 +166,10 @@ class _VerticalListWidgetState extends State<VerticalListWidget> {
         } else if (snapshot.hasError) {
           return Text(snapshot.error.toString());
         }
-        return SizedBox(
-          child: CircularProgressIndicator(),
+        return const SizedBox(
           height: 5.0,
           width: 120.0,
+          child: CircularProgressIndicator(),
         );
       }),
     );
